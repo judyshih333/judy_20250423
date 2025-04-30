@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .green {
+            color: green;
+        }
+
+        .green~div {
+            color: blue;
+        }
+
+        .green+div {
+            color: red;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h1>選擇器</h1>
+    <!-- 
+     1、"，"都要 
+     2、"~"同一層(少用)
+     3、"+"同一層+後一層(少用)
+     4、">"下一層
+     5、"空白鍵"後代"全部"(少用)-->
+
+    <div class="green">劉備</div>
+    <div>&nbsp;&nbsp;&nbsp;劉封</div>
+    <div class="liu3">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;小劉封
+    </div>
+    <div class="blue">關羽</div>
+    <div class="red">張飛</div>
+</body>
+
+</html>
