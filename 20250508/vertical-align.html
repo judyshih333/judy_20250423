@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 2px solid black;
+            background-color: lightblue;
+            text-align: center;
+            background-image: url(../20250505/one.png);
+        }
+
+
+        table,
+        tr,
+        td {
+            height: 700px;
+            background-color: blanchedalmond;
+            margin: auto;
+            text-align: center;
+        }
+
+        /* vertical-align 高度 只能用在table */
+        .td1 {
+            vertical-align: top;
+        }
+
+        .td2 {
+            vertical-align: middle;
+        }
+
+        .td3 {
+            vertical-align: bottom;
+        }
+
+        .table2-td {
+            width: 300px;
+            height: 200px;
+            background-color: lightblue
+        }
+    </style>
+</head>
+
+<body>
+    <h2>table1</h2>
+    <table>
+        <tr>
+            <td class="td1">
+                <div class="box" id="box1">1</div>
+            </td>
+            <td class="td2">
+                <div class="box" id="box2">2</div>
+            </td>
+            <td class="td3">
+                <div class="box" id="box3">3</div>
+            </td>
+
+
+        </tr>
+    </table>
+
+    <h2>table2</h2>
+    <table class="table2">
+        <tr>
+            <td class="table2-td">4
+            </td>
+            <td class="table2-td">5
+            </td>
+            <td class="table2-td">6
+            </td>
+
+
+        </tr>
+    </table>
+
+</body>
+
+</html>
