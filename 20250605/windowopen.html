@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>查單字</title>
+</head>
+
+<body>
+    <input type="text" id="myInput"></input>
+    <button type="button" id="myBtn">myBtn</button>
+    <script>
+        // 1.bind
+        let myBtn = document.getElementById('myBtn');
+        console.log('myBtn ok', myBtn);
+        let input = document.getElementById('myInput');
+        console.log('myInput ok', myInput);
+
+        // 2.action
+        myBtn.addEventListener('click',function() {
+            console.log('myBtn ok');
+        
+        let getInput=myInput.value;
+        console.log('getImput ok',getInput);
+            
+        let url = `https://www.merriam-webster.com/dictionary/${getInput}`;      
+
+        window.location.assign(url);
+            
+        });
+
+    </script>
+</body>
+
+</html>
