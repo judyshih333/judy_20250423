@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: aqua;
+        }
+
+        .bg-pink {
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+
+    </div>
+    <button type="button" id="myBtn">mybtn</button>
+    <script>
+        // 1.bind
+        let myBtn = document.getElementById('myBtn');
+        let box = document.querySelector('.box');
+
+        console.log('myBtn', myBtn);
+        console.log('myBtn typeof', typeof (myBtn));
+
+
+        // 2.action
+        myBtn.addEventListener('click', function () {
+            console.log('myBtn', myBtn);
+            box.setAttribute('class', 'box bg-pink');
+
+
+        // 設定秒數變色
+        setTimeout(
+            function(){
+                console.log('hihi myBtn');
+                
+            },3000);
+
+        });
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
