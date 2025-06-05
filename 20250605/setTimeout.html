@@ -15,6 +15,10 @@
         .bg-pink {
             background-color: pink;
         }
+
+        .bg-red{
+            background-color: red;
+        }
     </style>
 </head>
 
@@ -38,18 +42,27 @@
             box.setAttribute('class', 'box bg-pink');
 
 
-        // 設定秒數變色
-        setTimeout(
-            function(){
-                console.log('hihi myBtn');
-                
-            },3000);
+            // 設定每秒都不斷變色
+            setInterval(function () {
+                //  console.log('hihicolor');
+                // }, 1000);
+                box.setAttribute('class', 'box .bg');
+
+
+                // // 設定秒數變色
+                setTimeout(function () {
+                    // console.log('hihi myBtn');
+                    box.setAttribute('class', 'box .bg-red');
+
+                }, 1000);
+
+
+
+            }, 2000);
+
+
 
         });
-
-
-
-
 
     </script>
 
