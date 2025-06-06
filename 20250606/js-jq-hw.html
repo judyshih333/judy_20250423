@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box {
+        .box,
+        .jqBox {
             width: 400px;
             height: 400px;
             background-color: blanchedalmond;
@@ -86,16 +87,42 @@
 
     <!-- jq -->
     <div class="container">
-        <button type="button" id="jq-red">red</button>
-        <button type="button" id="jq-blue">blue</button>
-        <button type="button" id="jq-green">green</button>
+        <button type="button" id="jqRed">red</button>
+        <button type="button" id="jqBlue">blue</button>
+        <button type="button" id="jqGreen">green</button>
     </div>
     <hr>
     <div class="container">
-        <div id=myJqbox class="jq-box"></div>
+        <div id=myJqbox class="jqBox"></div>
     </div>
 
     <script>
+        // 1.bind
+        const jqRed = $('#jqRed');
+        const jqBlue = $('#jqBlue');
+        const jqGreen = $('#jqGreen');
+        const myJqbox = $('#myJqbox');
+        console.log('jqRed', jqRed);
+
+        // 2.action
+        jqRed.click(function () {
+            console.log('jqRed ok');
+            myJqbox.attr('class', 'box bg-red');
+
+        })
+
+        jqBlue.click(function () {
+            console.log('jqBlue ok');
+            myJqbox.attr('class', 'box bg-blue');
+
+        })
+
+        jqGreen.click(function () {
+            console.log('jqGreen ok');
+            myJqbox.attr('class', 'box bg-green');
+
+        })
+
 
     </script>
 
