@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 500px;
+            height: 500px;
+            background-color: lightblue;
+        }
+
+
+    </style>
+</head>
+
+<body>
+<div class="box"></div>
+
+
+    <!-- https://cdnjs.com/libraries/jquery 選mini檔-->
+    <!-- 延升模組  jQuery Code Snippets :jq method只能用在jq obj-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+
+    <!-- 1.bind -->
+    <script>
+        const boxJs = document.querySelector('.box');
+        const boxJq = $('.box');
+
+    // 2.action
+    console.log('boxJs',boxJs);
+    console.log('boxJq',boxJq);
+    
+    
+
+    </script>
+
+</body>
+
+</html>

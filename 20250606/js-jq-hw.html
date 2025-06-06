@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 400px;
+            height: 400px;
+            background-color: blanchedalmond;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+
+        .bg-green {
+            background-color: green;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <button type="button" id="bRed">red</button>
+        <button type="button" id="bBlue">blue</button>
+        <button type="button" id="bGreen">green</button>
+    </div>
+    <hr>
+    <div class="container">
+        <div id=myBox class="box"></div>
+    </div>
+    <script>
+        // 1.bind
+
+        const box = document.querySelector('#myBox');
+        console.log('box', box);
+        const bRed = document.querySelector('#bRed');
+        console.log('red', bRed);
+        const bBlue = document.querySelector('#bBlue');
+        console.log('blue', bBlue);
+        const bGreen = document.querySelector('#bGreen');
+        console.log('green', bGreen);
+
+        // 2.action
+        bRed.addEventListener('click', function () {
+            // console.log('red', bRed);
+            box.setAttribute('class', 'box bg-red');
+        }
+        );
+
+        bBlue.addEventListener('click', function () {
+            // console.log('blue', bBlue);
+            box.setAttribute('class', 'box bg-blue');
+        }
+        );
+
+        bGreen.addEventListener('click', function () {
+            // console.log('green', bGreen);
+            myBox.setAttribute('class', 'box bg-green');
+        }
+        );
+
+
+    </script>
+    <hr>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <!-- jq -->
+    <div class="container">
+        <button type="button" id="jq-red">red</button>
+        <button type="button" id="jq-blue">blue</button>
+        <button type="button" id="jq-green">green</button>
+    </div>
+    <hr>
+    <div class="container">
+        <div id=myJqbox class="jq-box"></div>
+    </div>
+
+    <script>
+
+    </script>
+
+
+
+</body>
+
+</html>
