@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box,
+        .jqBox {
+            width: 400px;
+            height: 400px;
+            background-color: blanchedalmond;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .bg-red {
+            background-color: red;
+        }
+
+        .bg-blue {
+            background-color: blue;
+        }
+
+        .bg-green {
+            background-color: green;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <button type="button" id="bRed" data-color="red">紅</button>
+        <button type="button" id="bBlue" data-color="blue">藍</button>
+        <button type="button" id="bGreen" data-color="green">綠</button>
+    </div>
+    <hr>
+    <div class="container">
+        <div id=myBox class="box"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+
+    <!-- jq data-藏資料-->
+
+    <script>
+        // 1.bind
+        const bRed = $('#bRed');
+        const bBlue = $('#bBlue');
+        const bGreen = $('#bGreen');
+        const myBox = $('#myBox');
+        console.log('bRed', bRed);
+
+        // 2.action
+        bRed.click(function () {
+            console.log('bRed ok');
+
+            // console.log('this',this);
+            // console.log('$(this)', $(this));
+
+            let tmpColor = $(this).attr('data-color');
+            console.log('tmpColor', tmpColor);
+
+            myBox.attr('class', `box bg-${tmpColor}`);
+
+        })
+
+
+
+
+        bBlue.click(function () {
+                console.log('bBlue ok');
+                let tmpColor = $(this).attr('data-color');
+                // let tmpColor = redBtn.data('color');
+
+                console.log('tmpColor', tmpColor);
+
+                myBox.attr('class', `box bg-${tmpColor}`);
+            });
+
+    </script>
+
+
+
+</body>
+
+</html>
