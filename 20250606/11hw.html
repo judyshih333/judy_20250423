@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        tr,
+        td {
+            width: 800px;
+            height: 100px;
+            border: 1px solid black;
+            text-align: center;
+
+        }
+
+        img {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>序號</td>
+            <td>品名</td>
+            <td>照片</td>
+            <td>單價</td>
+            <td>數量</td>
+            <td>小計</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>咖啡</td>
+            <td><img src="./coffee.jpg" alt="" srcset=""></td>
+            <td>210</td>
+            <td>
+                <input data-price="210" id=myCount type="number" value="">
+            </td>
+            <td>
+                <span id="myTotal">210</span>
+            </td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>牛奶</td>
+            <td><img src="./milk.jpg" alt="" srcset=""></td>
+            <td>180</td>
+            <td>
+                <input data-price="180" id=myCountno2 type="number" value="">
+            </td>
+            <td>
+                <span id="myTotalno2">180</span>
+            </td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>紅茶</td>
+            <td><img src="./tea.jpg" alt="" srcset=""></td>
+            <td>110</td>
+            <td>
+                <input data-price="110" id=myCountno3 type="number" value="">
+            </td>
+            <td>
+                <span id="myTotalno3">110</span>
+
+            </td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+            <td>合計</td>
+            <td>56</td>
+        </tr>
+    </table>
+
+
+    <!-- jq -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <Script>
+        $(document).ready(function () {
+            // <!-- 1.bind -->
+            const myCount = $('#myCount');
+            const myTotal = $('#myTotal');
+            console.log('myCount', myCount);
+
+            const myCountno2 = $('#myCountno2');
+            const myTotalno2 = $('#myTotalno2');
+            console.log('myCountno2', myCountno2);
+
+            // 2.action
+            myCount.change(function () {
+                console.log('myCount ok');
+                let tmpCount = Number(myCount.val());
+                let tmpPrice = Number(myCount.attr('data-price'));
+
+                console.log('tmpCount', tmpCount);
+                console.log('tmpPrice', tmpPrice);
+
+
+                let result = tmpCount * tmpPrice;
+                console.log('result', result);
+                myTotal.text(result);
+
+            })
+
+            myCountno2.change(function () {
+                console.log('myCount ok');
+                let tmpCountno2 = Number(myCountno2.val());
+                let tmpPriceno2 = Number(myCountno2.attr('data-price'));
+
+                console.log('tmpCountno2', tmpCountno2);
+                console.log('tmpPriceno2', tmpPriceno2);
+
+
+                let result = tmpCountno2 * tmpPriceno2;
+                console.log('result', result);
+                myTotalno2.text(result);
+
+            })
+
+        })
+
+    </script>
+
+    <!-- js -->
+<script>
+    const myCountno3 = document.getElementById('myCountno3');
+    const myTotalno3 = document.getElementById('myTotalno3');
+    console.log('myTotalno3',myTotalno3);
+
+      let getValue = myCountno3.value;
+        console.log('myCountno3', myCountno3);
+        console.log('getValue', getValue);
+        myTotalno3.innerText = 'Hello';
+    
+
+
+</script>
+
+
+
+</body>
+
+</html>
