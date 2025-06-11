@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .containerA {
+            height: 300px;
+            background-color: lightgray;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .containerB {
+            height: 300px;
+            background-color: blanchedalmond;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table,
+        tr,
+        td {
+            width: 30%;
+            height: 20px;
+            border: 1px, solid, black;
+            margin: auto;
+        }
+    </style>
 </head>
+
 <body>
-    
+    <div class="containerA">
+        <h2>複利計算</h2>
+
+        <p>單筆投入(萬)&nbsp;&nbsp;<input type="number" name="" id="money" value="1"></p>
+        <p>年化報酬率(%)&nbsp;&nbsp;<input type="number" name="" id="rate" value="8"></p>
+        <p>年限(年)&nbsp;&nbsp;<input type="number" name="" id="year" value="10"></p>
+
+        <p><button type="button" id="myButton">送出</button></p>
+
+
+    </div>
+
+
+    <div class="containerB">
+        <table>
+            <tr>
+                <td>年</td>
+                <td>金額(萬)</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>11</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 載入jq -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    </script>
+
+    <script>
+        // 1.bind
+        $(document).ready(function () {
+            const money = $('money');
+            const rate =$('rate');
+            const year =$('year');
+            const button=$('button');
+            console.log('money',money);
+            console.log('rate',reate);
+            console.log('year',year);
+            
+
+
+        });
+
+        // 2.action
+    </script>
+
+
+
 </body>
+
 </html>
