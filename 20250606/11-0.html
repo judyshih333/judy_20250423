@@ -38,10 +38,10 @@
             <td><img src="./coffee.jpg" alt="" srcset=""></td>
             <td>210</td>
             <td>
-                <input data-price="210" id=myCount type="number" value="0">
+                <input data-price="210" id=myCount type="number" value="">
             </td>
             <td>
-                <span id="myTotal" class="totals">0</span>
+                <span id="myTotal">210</span>
             </td>
         </tr>
         <tr>
@@ -50,10 +50,10 @@
             <td><img src="./milk.jpg" alt="" srcset=""></td>
             <td>180</td>
             <td>
-                <input data-price="180" id=myCountno2 class="totals" type="number" value="0">
+                <input data-price="180" id=myCountno2 type="number" value="">
             </td>
             <td>
-                <span id="myTotalno2">0</span>
+                <span id="myTotalno2">180</span>
             </td>
         </tr>
         <tr>
@@ -62,20 +62,20 @@
             <td><img src="./tea.jpg" alt="" srcset=""></td>
             <td>110</td>
             <td>
-                <input data-price="110" id=myCountno3 class="totals" type="number" value="0">
+                <input data-price="110" id=myCountno3 type="number" value="">
             </td>
             <td>
-                <span id="myTotalno3">0</span>
+                <span id="myTotalno3">110</span>
 
             </td>
         </tr>
         <tr>
-            <td colspan="4">合計</td>
-            <!-- <td>52</td> -->
-            <!-- <td>53</td> -->
-            <!-- <td>54</td> -->
-            <td colspan="2">0</td>
-            <!-- <td>56</td> -->
+            <td>51</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+            <td>合計</td>
+            <td>56</td>
         </tr>
     </table>
 
@@ -96,9 +96,11 @@
             const myTotalno2 = $('#myTotalno2');
             console.log('myCountno2', myCountno2);
 
-            // const myCountno3 = $('#myCountno3');
-            // const myTotalno3 = $('#myTotalno3');
-            // console.log('myCountno3', myCountno3);
+            const myCountno3 = $('#myCountno3');
+            const myTotalno3 = $('#myTotalno3');
+            console.log('myCountno3', myCountno3);
+
+
 
             // 2.action
             myCount.change(function () {
@@ -117,9 +119,13 @@
             })
 
             myCountno2.change(function () {
-
+                console.log('myCount ok');
                 let tmpCountno2 = Number(myCountno2.val());
                 let tmpPriceno2 = Number(myCountno2.attr('data-price'));
+
+                console.log('tmpCountno2', tmpCountno2);
+                console.log('tmpPriceno2', tmpPriceno2);
+
 
                 let result = tmpCountno2 * tmpPriceno2;
                 console.log('result', result);
@@ -127,41 +133,26 @@
 
             })
 
-            // myCountno3.change(function () {
+            myCountno3.change(function () {
+                console.log('myCount ok');
+                let tmpCountno3 = Number(myCountno3.val());
+                let tmpPriceno3 = Number(myCountno3.attr('data-price'));
 
-            //     let tmpCountno3 = Number(myCountno3.val());
-            //     let tmpPriceno3 = Number(myCountno3.attr('data-price'));
+                console.log('tmpCountno3', tmpCountno3);
+                console.log('tmpPriceno3', tmpPriceno3);
 
 
-            //     let result = tmpCountno3 * tmpPriceno3;
-            //     console.log('result', result);
-            //     myTotalno3.text(result);
+                let result = tmpCountno3 * tmpPriceno3;
+                console.log('result', result);
+                myTotalno3.text(result);
 
+            })
 
 
         })
 
-    </script>
-
-    <!-- js -->
-    <script>
-        const myCountno3 = document.getElementById('myCountno3');
-        const myTotalno3 = document.getElementById('myTotalno3');
-        console.log('myTotalno3', myTotalno3);
-
-        let getValue = myCountno3.value;
-        console.log('myCountno3', myCountno3);
-        console.log('getValue', getValue);
- 
-        let tmpCountno3Value = Number(myCountno3.value);
-        console.log('myCountno3', myCountno3);
-
-        let myTotalno3Value = Number(myTotalno3.value);
-        console.log('myTotalno3', myTotalno3);
 
 
-
-   
 
 
     </script>

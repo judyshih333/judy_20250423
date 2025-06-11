@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳單明細</title>
+    <style>
+        h2 {
+            width: 700px;
+            margin: auto;
+            /* background-color: aquamarine; */
+        }
+
+        table,
+        tr,
+        td {
+            width: 700px;
+            /* height: 150px; */
+            border: 1px solid black;
+            text-align: center;
+            margin: auto;
+        }
+
+        img {
+            width: 150px;
+        }
+
+        #originPrice {
+            color: blue;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        #nav {
+            background-color: lightgrey;
+            height: 50px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h2>帳單明細</h2>
+    <div class="container">
+
+        <table>
+            <tr id="nav">
+                <td>序號</td>
+                <td colspan="2">品名</td>
+                <!-- <td>照片</td> -->
+                <td>單價</td>
+                <td>數量</td>
+                <td>小計</td>
+
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>
+                    <img src="./coffee.jpg" alt="">
+
+                </td>
+                <td>咖啡
+                </td>
+                <td>
+                    <span>
+                        210
+                    </span>
+                </td>
+                <td>
+                    <input class="counts" data-price="210" type="number" name="" id="" value="0">
+                </td>
+                <td>
+                    <span class="totals">
+                        0
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>
+                    <img src="./milk.jpg" alt="">
+                </td>
+                <td>牛奶
+                </td>
+                <td>
+                    <span>
+                        180
+                    </span>
+                </td>
+                <td>
+                    <input class="counts" data-price="180" id="myCount" type="number" name="" id="" value="0">
+                </td>
+                <td>
+                    <span class="totals">
+                        0
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>
+                    <img src="./tea.jpg" alt="">
+                </td>
+                <td>
+                    紅茶
+                </td>
+                <td>
+                    <span>
+                        110
+                    </span>
+                </td>
+                <td>
+                    <input class="counts" data-price="110" type="number" name="" id="" value="0">
+                </td>
+                <td>
+                    <span class="totals">
+                        0
+                    </span>
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="4">總計(滿600元九折)</td>
+                <!-- <td></td> -->
+                <td colspan="2">
+                    <span id="originPrice">0</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- 載入jq -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+
+
+
+        // function
+        function sumFun() {
+
+            let tmpTotals = $('.totals');
+
+            console.log('tmpTotals', tmpTotals);
+
+            let sum = 0;
+
+            $.each(tmpTotals, function (key, value) {
+
+                let tmpValue = Number($(value).text());
+
+                console.log('tmpValue', tmpValue);
+
+                sum = sum + tmpValue;
+
+            });
+            console.log('sum', sum);
+            return sum;
+        }
+
+
+        $(document).ready(function () {
+            // 1.bind
+            const counts = $('.counts');
+            const totals = $('.totals');
+            const originPrice = $('#originPrice');
+
+            // 2.action
+            counts.change(function () {
+                let tmpCount = Number($(this).val());
+                let tmpPrice = Number($(this).attr('data-price'));
+
+                console.log('tmpCount', tmpCount);
+                console.log('tmpPrice', tmpPrice);
+
+                let result = tmpCount * tmpPrice;
+
+                console.log('result', result);
+
+                // parent() 往上找一層
+                // parent() 往上找兩層
+                // find()  往下找
+
+                let tmpTr = $(this).parent().parent();
+                let tmpTotal = tmpTr.find('.totals');
+
+                console.log('tmpTr', tmpTr);
+                console.log('tmpTotal', tmpTotal);
+
+                tmpTotal.text(result);
+
+                console.log(tmpTotal.text());
+
+                // let tmpTotals = $('.totals');
+
+                // console.log('tmpTotals', tmpTotals);
+                // console.log('counts', counts);
+
+                // let sum = 0;
+                // $.each(tmpTotals, function (key, value) {
+
+                //     let tmpValue = Number($(value).text());
+
+                //     console.log('tmpValue', tmpValue);
+
+                //     sum = sum + tmpValue;
+                //     console.log('sum', sum);
+
+                // });
+
+
+                // originPrice.text(sum);
+
+
+
+
+                // 滿額打折
+
+                let resultsum = Number(sumFun());
+
+                console.log('resultsum', resultsum);
+
+
+                let endPrice = 0
+                if (resultsum >= 600) {
+                    endPrice = resultsum * 0.9;
+                    originPrice.text(endPrice + "(原價 :" + resultsum + ")");
+
+
+
+                } else {
+                    endPrice = resultsum;
+                    originPrice.text(endPrice);
+                }
+
+            });
+
+        });
+
+
+
+
+    </script>
+</body>
+
+</html>
