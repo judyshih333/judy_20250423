@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 50px;
+            background-color: lightgray;
+        }
+
+        .box2 {
+            width: 300px;
+            height: 300px;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="myBox"></div>
+    <div class="box2" id="box2"></div>
+
+    <!-- slideUp -->
+    <button type="button" id="slideUpBtn">slideUp</button>
+    <!-- slideDown -->
+    <button type="button" id="slideDownBtn">slideDown</button>
+    <!-- 切換slideToggle -->
+    <button type="button" id="slideToggleBtn">slideToggle</button>
+
+
+    <!-- 載入jq -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+        // 1.bind
+        $(document).ready(function () {
+            const myBox = $('#myBox');
+            const box2 = $('#box2');
+
+            const slideUpBtn = $('#slideUpBtn');
+            const slideDownBtn = $('#slideDownBtn');
+            const slideToggleBtn = $('#slideToggleBtn');
+            console.log('myBox', myBox);
+            console.log('box2', box2);
+
+            console.log('slideUpBtn', slideUpBtn);
+            console.log('slideDownBtn', slideDownBtn);
+            console.log('slideToggleBtn', slideToggleBtn);
+
+
+
+
+
+            // 2.action
+            slideUpBtn.click(function (e) {
+                box2.slideUp(2000);
+
+            });
+
+
+            slideDownBtn.click(function (e) {
+                box2.slideDown(2000);
+
+            });
+
+
+            slideToggleBtn.click(function (e) {
+                box2.slideToggle(2000);
+
+            });
+
+        });
+
+
+    </script>
+</body>
+
+</html>

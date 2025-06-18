@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="myBox"></div>
+    <!-- 隱藏hide -->
+    <button type="button" id="hideBtn">hide</button>
+    <!-- 顯示show -->
+    <button type="button" id="showBtn">show</button>
+    <!-- 切換toggle -->
+    <button type="button" id="toggleBtn">toggle</button>
+
+
+    <!-- 載入jq -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+        // 1.bind
+        $(document).ready(function () {
+            const myBox = $('#myBox');
+            const hideBtn = $('#hideBtn');
+            const showBtn = $('#showBtn');
+            const toggleBtn = $('#toggleBtn');
+            console.log('myBox', myBox);
+            console.log('hideBtn', hideBtn);
+            console.log('showBtn', showBtn);
+            console.log('toggleBtn', toggleBtn);
+
+
+
+
+
+            // 2.action
+            hideBtn.click(function (e) {
+                myBox.hide();
+
+            });
+
+
+            showBtn.click(function (e) {
+                myBox.show();
+
+            });
+
+
+            toggleBtn.click(function (e) {
+                myBox.toggle();
+
+            });
+
+        });
+
+
+    </script>
+</body>
+
+</html>

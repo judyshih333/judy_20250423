@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            background-color: blanchedalmond;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box" id="myBox"></div>
+    <!-- 淡入fadeIn -->
+    <button type="button" id="fadeInBtn">fadeIn</button>
+    <!-- 淡出fadeOut -->
+    <button type="button" id="fadeOutBtn">fadeOut</button>
+    <!-- 切換fadeToggle -->
+    <button type="button" id="fadeToggleBtn">fadeToggle</button>
+
+
+    <!-- 載入jq -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script>
+        // 1.bind
+        $(document).ready(function () {
+            const myBox = $('#myBox');
+            const fadeInBtn = $('#fadeInBtn');
+            const fadeOutBtn = $('#fadeOutBtn');
+            const fadeToggleBtn = $('#fadeToggleBtn');
+            console.log('myBox', myBox);
+            console.log('fadeInBtn', fadeInBtn);
+            console.log('sfadeOutBtn', fadeOutBtn);
+            console.log('fadeToggleBtn', fadeToggleBtn);
+
+
+
+
+
+            // 2.action
+            fadeInBtn.click(function (e) {
+                myBox.fadeIn(2000);
+
+            });
+
+
+            fadeOutBtn.click(function (e) {
+                myBox.fadeOut(2000);
+
+            });
+
+
+            fadeToggleBtn.click(function (e) {
+                myBox.fadeToggle(2000);
+
+            });
+
+        });
+
+
+    </script>
+</body>
+
+</html>

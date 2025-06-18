@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .containerA {
+            height: 300px;
+            background-color: lightgray;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .containerB {
+            height: 300px;
+            background-color: blanchedalmond;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            width: 30%;
+            height: 20px;
+            border: 1px, solid, black;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="containerA">
+        <h2>複利計算</h2>
+
+        <p>單筆投入(萬)&nbsp;&nbsp;<input type="text" name="" id="money" value="1"></p>
+        <p>年化報酬率(%)&nbsp;&nbsp;<input type="text" name="" id="rate" value="8"></p>
+        <p>年限(年)&nbsp;&nbsp;<input type="text" name="" id="year" value="10"></p>
+
+        <p><button type="button" id="myBtn">送出</button></p>
+
+
+    </div>
+
+
+    <div class="containerB">
+        <h2>試算結果</h2>
+        <table id="myTable">
+            <tr>
+                <th>年</th>
+                <th>金額(萬)</th>
+            </tr>
+            <!-- <tr>
+                <td>0</td>
+                <td>10</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>11</td>
+            </tr> -->
+        </table>
+    </div>
+
+    <form action="" method="get"></form>
+    <!-- 載入jq -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    </script>
+
+    <script>
+        // 1.bind
+        $(document).ready(function () {
+            const money = $('#money');
+            const rate = $('#rate');
+            const year = $('#year');
+            const myBtn = $('#myBtn');
+            const myTable = $('#myTable');
+
+            console.log('money', money);
+            console.log('rate', rate);
+            console.log('year', year);
+            // let date = [
+            //     {
+            //         'id': 1,
+            //         'year': 1,
+            //         'money': '100'
+            //     },
+            //     {
+            //         'id': 2,
+            //         'year': 2,
+            //         'money': '108'
+            //     },
+            //     {
+            //         'id': 3,
+            //         'year': 3,
+            //         'money': '116'
+            //     }
+            // ];
+
+
+
+
+
+            // 2.action
+            myBtn.click(function () {
+                console.log('myBtn', myBtn);
+                let moneyValue = Number(money.val());
+                let rateValue = Number(rate.val());
+                let yearValue = Number(year.val());
+
+                console.log('moneyValue', moneyValue);
+                console.log('rateValue', rateValue);
+                console.log('yearValue', yearValue);
+
+
+                let tmpTableHead = `
+                <tr>
+                    <th>年</th>
+                    <th>金額(萬)</th>
+                </tr>
+                `;
+                myTable.text('');   // 清空Table資料
+                myTable.append(tmpTableHead);
+
+
+                let date = [];        //  =[{},{}]
+
+                for (let i = 1; i <= yearValue; i++) {
+                    console.log(`第 ${i} 年`);
+                    let tmpYear = i;
+                    let tmpMoney = moneyValue;
+                    let tmpObj = {
+                        'id': i,
+                        'year': tmpYear,
+                        'money': tmpMoney,
+
+                    }
+                    console.log('tmpObj', tmpObj);
+                    date.push(tmpObj);
+
+
+                }
+                console.log('date', date);
+
+
+
+                let tmpText = `
+                    <tr>
+                        <td>1</td>
+                        <td>11</td>
+                    </tr> `
+
+                    ;
+                let sum = 0;
+                let tmpResult = ``;
+                $.each(date, function (key, value) {
+                    console.log('key', key);
+                    console.log('value', value);
+                    tmpResult += `
+                    <tr>
+                        <td>${value.year}</td>
+                        <td>${value.money}</td>
+                    </tr> 
+                `;
+
+                    console.log('tmpResult', tmpResult);
+
+                });
+
+
+                myTable.append(tmpResult);
+
+
+            });
+
+
+
+        });
+
+    </script>
+
+
+
+</body>
+
+</html>
