@@ -81,7 +81,7 @@
                     // </tr>
                     // `;
 
-                    // myTable.append(tmpText);
+                    // myTable.append(tmpText);     // myTable後面新增tmpText內容
 
 
 
