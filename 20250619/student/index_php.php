@@ -12,6 +12,21 @@ include "./data.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        table {
+            width: 80%;
+            text-align: center;
+        }
+
+        table,
+        tr,
+        th,
+        td {
+            border: 1px solid black;
+            margin: auto;
+        }
+    </style>
+
 </head>
 
 <body>
@@ -32,7 +47,6 @@ include "./data.php";
                 <td><?= $value['id'] ?></td>
                 <td><?= $value['name'] ?></td>
 
-                <td></td>
             </tr>
 
         <?php endforeach; ?>
