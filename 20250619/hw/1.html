@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js/jq</title>
+
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <p>
+        num1&nbsp;&nbsp;<input type="number" name="" id="num1" value="100">
+    </p>
+    <p>
+        opt&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="" id="opt" value="+">
+
+    </p>
+    <p>
+        num2&nbsp;&nbsp;<input type="number" name="" id="num2" value="50">
+    </p>
+    <p>
+        <button type="button" id="myBtn">送出</button>
+    </p>
+    <hr>
+    <p id="resultp">
+        num1+num2=
+
+    </p>
+
+    <!-- 載入jquery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        // 1.bind
+        $(document).ready(function () {
+            const num1 = $('#num1');
+            const num2 = $('#num2');
+            const opt = $('#opt');
+            const myBtn = $('#myBtn');
+            const resultp = $('#resultp');
+
+            console.log('num1', num1);
+            console.log('num2', num2);
+            console.log('opt', opt);
+            console.log('resultp', resultp);
+
+            // 2.action
+
+            myBtn.click(function () {
+                console.log('myBtn ok');
+
+                // 2.1抓num1值
+                let num1Value = Number(num1.val());
+                console.log('num1Value', num1Value);
+
+                // 2.2抓num2值
+                let num2Value = Number(num2.val());
+                console.log('num2Value', num2Value);
+
+                // 2.3抓opt值
+                let optValue = opt.val();
+                console.log('optValue', optValue);
+
+                // 2.4計算
+                let result = num1Value + num2Value;
+                console.log('result', result);
+
+
+                resultp.text("num1+num2=" + result);
+
+            });
+
+
+        });
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
