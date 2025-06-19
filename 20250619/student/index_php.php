@@ -1,39 +1,19 @@
 <?php
-function dd($data)
-{
-    echo"<pre>";
-    print_r($data);
-    echo"</pre>";
+include "./data.php";
 
-}
-
-
-$data=[
-    [
-        'id'=>1,
-        'name'=>'amy',
-    ],
-
-    ['id'=>2,
-    'name'=>'bob',
-],
-
-['id'=>3,
-'name'=>'cat',
-]
-]
-
-
+// dd($data);
 ?>
 
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <table>
         <tr>
@@ -44,17 +24,19 @@ $data=[
             <td>1</td>
             <td>amy</td>
         </tr> -->
-<?php
-foreach ($data as $key=>$value):?>
 
-<tr>
-    <td><?=$value['id']?></td>
-    <td><?=$value['name']?></td>
+        <?php
+        foreach ($data as $key => $value): ?>
 
-    <td></td>
-</tr>
+            <tr>
+                <td><?= $value['id'] ?></td>
+                <td><?= $value['name'] ?></td>
 
-<?php endforeach;?>
+                <td></td>
+            </tr>
+
+        <?php endforeach; ?>
     </table>
 </body>
+
 </html>
